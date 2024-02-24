@@ -23,37 +23,73 @@
 //   }
 export default {
     title: 'Feedback',
-    name: 'feedback',
+    name: 'feedbackform',
     type: 'document',
     fields: [
       {
-        title: 'Rating',
-        name: 'rating',
-        type: 'number',
-      },
-      {
-        title: 'Article',
+        title: 'Topic Name',
         name: 'article',
         type: 'string',
         weak: true,
-        // to: [{type: 'article'}, {type: 'schemaType'}, {type: 'helpArticle'}]
+       
       },
       {
-        title: 'Comment',
-        name: 'comment',
-        type: 'text',
-        description: 'Comment submitted from sanity.io'
+        title: 'Which game package are you providing feedback on?',
+        name: 'ques1',
+        type: 'string',
+        weak: true,
+        
       },
       {
-        name: 'done',
-        type: 'boolean',
-        title: 'Is this feedback dealt with?'
+        title: 'What version of the game are you playing?',
+        name: 'ques2',
+        type: 'string',
+        
+      },
+     
+      {
+        title: ' General thoughts and how we can improve.',
+        name: 'ques3',
+        type: 'string',
+        
       },
       {
-        name: 'notes',
-        type: 'text',
-        title: 'Internal notes',
-        description: 'What did we do with this feedback?'
+        title: 'Any technical issues or bugs encountered?',
+        name: 'ques4',
+        type: 'string',
+        
+      },
+      {
+        title: 'Any innovative features or content you would like to suggest?',
+        name: 'ques5',
+        type: 'string',
+        weak: true,
+        
+      },
+      {
+        title: 'What elements of the game did you enjoy the most?',
+        name: 'ques6',
+        type: 'string',
+        
+      },
+     
+      {
+        title: 'What did not work for you in the game?',
+        name: 'cques7',
+        type: 'string',
+        
+      },
+      {
+        title: 'Your social media handle or best contact method.',
+        name: 'ques8',
+        type: 'string',
+        
+      },
+      {
+        title: 'Are you a current holder of our ORC Nation NFT?',
+        name: 'ques9',
+        type: 'string',
+        
       }
     ]
   }

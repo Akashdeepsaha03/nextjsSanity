@@ -6,11 +6,15 @@ import {PortableText} from "@portabletext/react";
 interface IPortfolio {
     _id: string;
     article: string;
-    comment: string;
-    rating: number;
-    _createdAt: string;
-    notes: string;
-    done: boolean;
+    ques1: string;
+    ques2: string;
+    ques3: string;
+    ques4: string;
+    ques5: string;
+    ques6: string;
+    cques7: string;
+    ques8: string;
+    ques9: string;
 }
 interface CategorizedFeedback {
     goodScores: IPortfolio[];
@@ -19,30 +23,30 @@ interface CategorizedFeedback {
   }
 
 async function getData() {
-    const query = `*[_type == 'feedback']`;
+    const query = `*[_type == 'feedbackform']`;
     const data = await client.fetch(query);
     
     return data as IPortfolio[];
 
 }
-async function getData2() {
-    const query = `*[_type == 'feedback']`;
-    const data: IPortfolio[] = await client.fetch(query);
+// async function getData2() {
+//     const query = `*[_type == 'feedback']`;
+//     const data: IPortfolio[] = await client.fetch(query);
     
-    const categorizedData: CategorizedFeedback = {
-        goodScores: data.filter(item => item.rating >= 4),
-        badScores: data.filter(item => item.rating < 2),
-        neutralScores: data.filter(item => item.rating === 3),
-    };
+//     const categorizedData: CategorizedFeedback = {
+//         goodScores: data.filter(item => item.rating >= 4),
+//         badScores: data.filter(item => item.rating < 2),
+//         neutralScores: data.filter(item => item.rating === 3),
+//     };
 
-    return categorizedData;
-}
+//     return categorizedData;
+// }
 
 const Portfolio = async() => {
     const data = (await getData()) as IPortfolio[]
     console.log(data);
-    const data2 : CategorizedFeedback = await getData2();
-    console.log(data2);
+    // const data2 : CategorizedFeedback = await getData2();
+    // console.log(data2);
     return (
         // <div className={styles.container}>
         //     <h1 className={styles.selectTitle}>Portfolio</h1>
@@ -69,11 +73,18 @@ const Portfolio = async() => {
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Article</th>
-                <th>Comment</th>
-                <th>notes</th>
-                <th>rating</th>
-                <th>is Valid</th>
+                <th>Topic</th>
+                <th>Game Package</th>
+                <th>Game Version</th>
+                
+                <th>Feedback/Suggestions</th>
+                <th>Glitches/Errors</th>
+                <th>New Ideas</th>
+                <th>Likes</th>
+                <th>Dislikes</th>
+                <th>Contact Info</th>
+                <th>ORC Nation Holder</th>
+              
             </tr>
         </thead>
         <tbody>
@@ -81,38 +92,23 @@ const Portfolio = async() => {
                 <tr key={item?._id}>
                     <td>{index + 1}</td>
                     <td>{item?.article}</td>
-                    <td>{item?.comment}</td>
-                    <td>{item?.notes}</td>
-                    <td>{item?.rating}</td>
-                    <td>{item?.done ? '✅' : '❌'}</td>
+                    <td>{item?.ques1}</td>
+                    <td>{item?.ques2}</td>
+                    <td>{item?.ques3}</td>
+                    <td>{item?.ques4}</td>
+                    <td>{item?.ques5}</td>
+                    <td>{item?.ques6}</td>
+                    <td>{item?.cques7}</td>
+                    <td>{item?.ques8}</td>
+                    <td>{item?.ques9}</td>
+                    
+                  
                 </tr>
             ))}
         </tbody>
     </table>
 
-    <h1 className={styles.selectTitle}>Forms Evaluation</h1>
-    <table className={`${styles.table} ${styles.tableMarginBottom}`}>
-        <thead>
-            <tr>
-                <th>Score Type</th>
-                <th>Count</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Good Scores</td>
-          <td>{data2.goodScores.length}</td>
-        </tr>
-        <tr>
-          <td>Bad Scores</td>
-          <td>{data2.badScores.length}</td>
-        </tr>
-        <tr>
-          <td>Neutral Scores</td>
-          <td>{data2.neutralScores.length}</td>
-        </tr>
-      </tbody>
-    </table>
+    
 
 
     
