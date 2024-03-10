@@ -67,6 +67,7 @@ const Portfolio = async() => {
 
         //     </div>
         // </div>
+        <div style={{ backgroundColor: '#331155', height: '100vh', width: '100vw' }}>
         <div className={styles.container}>
     <h1 className={styles.selectTitle}>Feedback Forms</h1>
     <table className={`${styles.table} ${styles.tableMarginBottom}`}>
@@ -113,6 +114,7 @@ const Portfolio = async() => {
 
     
 
+</div>
 </div>
 
 

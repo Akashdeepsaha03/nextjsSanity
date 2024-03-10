@@ -1,39 +1,62 @@
-/* Assuming this is in a CSS Module file like styles.module.css */
-
+/* Main container adjustments */
 .container {
-    margin: auto;
+    margin: 0 auto; /* Centers the container */
     padding: 20px;
-    width: 90%;
+    width: 100%; /* Ensures it spans the full width */
+    background: #2E2E2E; /* Solid dark grey background */
+    border-radius: 25px; /* Rounded corners for a softer look */
+    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
 }
 
+/* Title styling with gradient background */
 .selectTitle {
     text-align: center;
-    color: #333;
+    color: #FFFFFF; /* White text for contrast */
     margin-bottom: 20px;
+    background: linear-gradient(90deg, #665999, #331155); /* Gradient from light to dark purple */
+    font-family: 'Montserrat', sans-serif; /* Consistent font usage */
+    padding: 20px; /* Ample padding for aesthetic spacing */
+    border-radius: 15px; /* Slightly rounded corners for the title block */
 }
 
+/* Table styling for readability and aesthetics */
 .table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #2E2E2E; /* Consistent with the container background */
+    color: #FFFFFF; /* White text for readability */
+    border-radius: 25px; /* Consistent rounded corners */
+    overflow: hidden; /* Clips content to the border-radius */
 }
 
+/* Table cell and header styling */
 .table th, .table td {
     text-align: left;
-    padding: 8px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 1px solid #666666; /* Subtle borders for definition */
+    color: #FFFFFF; /* Ensures text is readable against the background */
 }
 
+/* Header specific styling */
 .table th {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #665999; /* Distinguishes headers with a purple background */
 }
 
+/* Zebra striping for rows for better readability */
 .table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #331155; /* Dark purple for even rows */
 }
-/* Add margin to the bottom of the first table */
+
+.table tr:nth-child(odd) {
+    background-color: #2E2E2E; /* Maintains container background for odd rows */
+}
+
+/* Hover effect for table rows */
+.table tr:hover {
+    background-color: #FF7733; /* Orange background on hover for interactivity */
+}
+
+/* Additional margin below the table for spacing */
 .tableMarginBottom {
-    margin-bottom: 60px; /* Adjust the value as needed */
-  }
-  
-  
+    margin-bottom: 60px; /* Provides separation from subsequent content */
+}
